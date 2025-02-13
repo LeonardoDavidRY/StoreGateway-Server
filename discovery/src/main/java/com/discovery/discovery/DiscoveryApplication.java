@@ -1,15 +1,15 @@
-package com.uce.discovery_server;
+package com.discovery.discovery;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
-@EnableEurekaServer
 @SpringBootApplication
-public class DiscoveryServerApplication {
+@EnableEurekaServer
+public class DiscoveryApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DiscoveryServerApplication.class, args);
+		SpringApplication.run(DiscoveryApplication.class, args);
 	}
 
 }

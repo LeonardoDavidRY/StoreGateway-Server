@@ -1,0 +1,20 @@
+# Usa una imagen base más ligera
+FROM eclipse-temurin:21-jre AS runtime
+
+# Establece el directorio de trabajo
+WORKDIR /app
+
+# Define un argumento y una variable de entorno para el nombre del JAR
+ARG JAR_FILE=target/discovery-0.0.1-SNAPSHOT.jar
+ENV JAR_NAME=eureka-server.jar
+
+# Copia el archivo JAR al contenedor
+COPY ${JAR_FILE} ${JAR_NAME}
+
+# Expone el puerto de Eureka
+EXPOSE 8761
+
+# Comando para ejecutar Eureka Server
+ENTRYPOINT ["java", "-jar", "/app/eureka-server.jar"]
+
+
